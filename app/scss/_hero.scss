@@ -1,0 +1,267 @@
+.hero {
+  background-color: $black; //changed this
+  padding-top: 3.75rem;
+
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+      align-items: center;
+      // height: 62rem;
+    }
+  }
+
+  &__textfield {
+    margin-top: 3.125rem;
+
+    display: flex;
+    max-height: 52px;
+  }
+
+  &__image {
+    position: relative;
+    background-image: url("/images/bg-intro-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+      background-position: center 60%;
+    }
+
+    @include breakpoint-up(large) {
+      flex: 1;
+      order: 2;
+
+      min-height: 41rem;
+      background-image: none;
+      // background-image: url("/images/bg-intro-desktop.svg");
+      // background-position: left center;
+    }
+
+    // before is a pseudo element -whats a pseudo element
+    // when you have a pseudo element on the page you need give it a content element
+
+    &::before {
+      @include breakpoint-up(large) {
+        content: "";
+        // position: absolute;
+        // height: 96%;
+        // // width: 100%;
+        // background-image: url("/images/Ellipse.svg");
+        // background-repeat: no-repeat;
+        // background-position: center bottom;
+        // // width: 150%;
+        // // background-size: 32%;
+        // width: 400%;
+        // background-size: 12%;
+        // background-position: 0% 83%;
+        // left: 52%;
+
+        position: absolute;
+        height: 95%;
+        background-image: url(/images/Ellipse.svg);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        width: 465%;
+        background-size: 13%;
+        background-position: 0% 83%;
+        left: 42%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: url("/images/model.svg");
+      background-size: 43%;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+
+      @include breakpoint-up(medium) {
+        background-size: 52%;
+      }
+
+      @include breakpoint-up(large) {
+        // width: 120%;
+        // height: 122%;
+        // background-size: 94%;
+        // background-position: center 150%;
+        // left: 22%;
+
+        width: 81%;
+        height: 103%;
+        background-size: 68%;
+        background-position: center 15%;
+        left: 34%;
+        top: 13%;
+      }
+    }
+  }
+
+  &__image3 {
+    &::after {
+      background-image: url("/images/cloth-shop.svg");
+      position: absolute;
+      // background-image: url("/images/secondImg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      // min-height: 17.5rem;
+      // max-height: 20px;
+      left: 5.1825rem;
+      bottom: 12rem;
+    }
+  }
+
+  &__image2 {
+    position: absolute;
+    height: 25.5rem;
+    left: 10rem;
+    bottom: -6rem;
+  }
+
+  &__image1 {
+    position: absolute;
+    // height: 25rem;
+    // left: 6.5rem;
+    // bottom: 11.2rem;
+
+    height: 23rem;
+    left: 6.8rem;
+    bottom: 10.2rem;
+  }
+
+  //   &__image2 {
+  //     position: absolute;
+  //     // background-image: url("/images/secondImg.png");
+  //     background-size: cover;
+  //     background-repeat: no-repeat;
+  //     background-position: center center;
+  //     min-height: 7.5rem;
+  //     // max-height: 20px;
+  //     left: 11.1825rem;
+  //     bottom: 16rem;
+  //   }
+
+  &__text {
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      flex: 1;
+      order: 1;
+      text-align: left;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.31rem;
+      line-height: 1.15;
+      color: $white;
+      margin-bottom: 1.5rem;
+
+      @include breakpoint-up(large) {
+        font-size: 4.2875rem; // font-size: 12.8125rem;
+      }
+    }
+  }
+
+  p {
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+    color: $white;
+
+    @include breakpoint-up(large) {
+      font-size: 1.5625rem;
+    }
+  }
+
+  &__apple-store {
+    @include breakpoint-up(large) {
+      padding-top: 1.125rem;
+      padding-left: 1.125rem;
+      padding-bottom: 0.625rem;
+    }
+    @include breakpoint-up(medium) {
+      padding-top: 1.125rem;
+      padding-left: 1.125rem;
+      padding-bottom: 0.625rem;
+    }
+    @include breakpoint-down(small) {
+      display: block;
+      // padding-top: 0.625rem;
+    }
+  }
+
+  &__apple-store {
+    @include breakpoint-up(large) {
+      padding-top: 0.625rem;
+    }
+    @include breakpoint-up(medium) {
+      padding-top: 0.625rem;
+    }
+
+    @include breakpoint-down(small) {
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+  }
+
+  &__barger {
+    position: relative;
+    left: 2rem;
+    top: -1.75rem;
+    font-weight: bold;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__pad {
+    margin-top: 3rem;
+  }
+}
+
+input[type="text"] {
+  // height: 70px;
+  width: 50%;
+  height: 3.125rem;
+  background-color: white;
+  border-radius: 50px 0px 0px 50px;
+  padding-left: 2.5rem;
+  border: none;
+
+  &:focus {
+    outline: 0;
+  }
+}
+input[type="submit"] {
+  left: -5px;
+  position: relative;
+  border-radius: 0 50px 50px 0;
+  width: 11.875rem;
+  height: 3.125rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #7bf9b5;
+  color: black;
+}
+// &__container--bottom{
+//   margin-bottom: 4rem;
+// }
+
+.text-padding {
+  padding-left: 4rem;
+}
